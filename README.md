@@ -1,4 +1,4 @@
-# Computational Social Science & Network Analysis of the 1988 Brazilian Constituent Assembly (SAIC Dataset)
+# Who Wanted What in Brazil's "Citizen Constitution"? Network Communities and Sociodemographic Cleavages in 72,719 Letters to the 1988 Constituent Assembly
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/alkawamo/snam-saic-1988/blob/main/SAIC_1988_OpenScience_Analysis.ipynb)
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
@@ -6,7 +6,7 @@
 
 This repository provides the open-science data curation pipeline, reproducible source code, and high-resolution figures accompanying the study:
 
-> **Uncovering Grassroots Constitutional Demands through Word Co-occurrence Networks and Multi-Dimensional Sociodemographic Stratification: Evidence from 72,719 Citizen Letters to the 1988 Brazilian Constituent Assembly**
+> **Who Wanted What in Brazil's ``Citizen Constitution''? Network Communities and Sociodemographic Cleavages in 72,719 Letters to the 1988 Constituent Assembly**
 
 ---
 
