@@ -1,42 +1,42 @@
-\documentclass[10pt,twocolumn,a4paper]{article}
+\documentclass[default,sn-mathphys,iicol]{sn-jnl}
 
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage{mathptmx}
-\usepackage[margin=1.8cm, columnsep=0.7cm]{geometry}
 \usepackage{graphicx}
-\usepackage{booktabs}
-\usepackage{tabularx}
-\usepackage{amsmath,amssymb}
 \usepackage{multirow}
-\usepackage{array}
-\usepackage[numbers,sort&compress]{natbib}
-\usepackage[hyphens]{url}
-\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage[title]{appendix}
+\usepackage{xcolor}
+\usepackage{textcomp}
+\usepackage{manyfoot}
+\usepackage{booktabs}
+\usepackage{algorithm}
+\usepackage{algorithmicx}
+\usepackage{algpseudocode}
+\usepackage{listings}
+\usepackage{tabularx}
+\usepackage{url}
 
-\setlength{\emergencystretch}{3em}
+\jyear{2026}
 
-\title{\textbf{Who Wanted What in Brazil's ``Citizen Constitution''? Network Communities and Sociodemographic Cleavages in 72,719 Letters to the 1988 Constituent Assembly}}
-
-\author{
-  \textbf{Rafael Roseira Machado}$^{1}$ \and \textbf{Andr\'{e} Luiz Satoshi Kawamoto}$^{1,*}$\\[4pt]
-  \small $^{1}$Department of Computer Science, Federal University of Technology -- Paran\'{a} (UTFPR), Campo Mour\~{a}o, PR, Brazil\\
-  \small $^{*}$Corresponding author: \texttt{kawamoto@utfpr.edu.br}
-}
-
-\date{}
+\raggedbottom
 
 \begin{document}
+
+\title[Who Wanted What in Brazil's ``Citizen Constitution''?]{Who Wanted What in Brazil's ``Citizen Constitution''? Network Communities and Sociodemographic Cleavages in 72,719 Letters to the 1988 Constituent Assembly}
+
+\author[1]{\fnm{Rafael} \sur{Roseira Machado}}\email{rafaelroseira@alunos.utfpr.edu.br}
+\author*[1]{\fnm{Andr\'{e} Luiz Satoshi} \sur{Kawamoto}}\email{kawamoto@utfpr.edu.br}
+
+\affil*[1]{\orgdiv{Department of Computer Science}, \orgname{Federal University of Technology -- Paran\'{a} (UTFPR)}, \orgaddress{\street{Via Rosalina Maria dos Santos, 1233}, \city{Campo Mour\~{a}o}, \postcode{87301-899}, \state{Paran\'{a}}, \country{Brazil}}}
+
+\abstract{Between 1986 and 1987, during Brazil's democratic transition from a 21-year military regime, the Federal Senate's Data Processing Center (Prodasen) conducted one of the largest pre-Internet participatory democracy experiments in history: the Citizen Information Support System (SAIC). Across all 26 Brazilian states and territories, 72,719 citizen letters and standardized forms containing constitutional proposals were digitized and manually indexed into 24 bureaucratic macro-themes. While qualitative historical studies have examined isolated subsets of these letters, the full corpus has never been modeled simultaneously through complex networks and multi-dimensional sociodemographic stratification. In this paper, we present an end-to-end Computational Social Science framework that: (i) audits and curates the complete 72,719-record historical database, identifying and correcting 323 spreadsheet formula corruption artifacts (\texttt{\#NOME?}); (ii) constructs a Positive Pointwise Mutual Information (PPMI) word co-occurrence network over the $N=70,151$ unique valid letters; (iii) extracts emergent discourse communities via the Louvain modularity maximization algorithm; and (iv) cross-tabulates the emergent bottom-up semantic communities against the 1986 top-down bureaucratic taxonomy, six sociodemographic and mobilization dimensions (gender, urban/rural residence, spontaneous vs.\ coordinated petition campaigns, age cohorts, educational attainment, and income brackets), five geographic macro-regions plus state-level units, and the bipartite citizen-to-parliamentarian targeting network. Sensitivity analysis across document frequency thresholds and PPMI percentile cutoffs reveals an optimal connected network ($|V|=322$ nodes, $|E|=1,823$ edges, density $3.53\%$) that achieves high modularity ($Q=0.6363$) across eight cohesive thematic communities. Chi-square and Cram\'{e}r's $V$ analyses over $71,428$ mapped letters demonstrate highly significant structural divides ($p < 10^{-100}$): female citizens disproportionately prioritized Educational Policy ($21.3\%$ vs.\ $12.2\%$ for males) and Social Security/Healthcare ($14.7\%$), rural citizens championed Economic Development/Agriculture ($14.0\%$) and Labor/Professional Autonomy ($18.1\%$), life-course streamgraphs reveal a transition from youth educational demands ($23.4\%$) to senior welfare priorities ($17.0\%$), and institutional state-design themes (Public Administration and Political/Electoral Structure) rose monotonically with income and formal education, nearly doubling from the lowest to the highest socioeconomic strata. All curated data and replication scripts are openly released to foster Open Science.}
+
+\keywords{Complex Networks, Community Detection, Pointwise Mutual Information, Computational Social Science, Participatory Democracy, 1988 Brazilian Constitution}
+
 \maketitle
 
-\begin{abstract}
-Between 1986 and 1987, during Brazil's democratic transition from a 21-year military regime, the Federal Senate's Data Processing Center (Prodasen) conducted one of the largest pre-Internet participatory democracy experiments in history: the Citizen Information Support System (SAIC). Across all 26 Brazilian states and territories, 72,719 citizen letters and standardized forms containing constitutional proposals were digitized and manually indexed into 24 bureaucratic macro-themes. While qualitative historical studies have examined isolated subsets of these letters, the full corpus has never been modeled simultaneously through complex networks and multi-dimensional sociodemographic stratification. In this paper, we present an end-to-end Computational Social Science framework that: (i) audits and curates the complete 72,719-record historical database, identifying and correcting 323 spreadsheet formula corruption artifacts (\texttt{\#NOME?}); (ii) constructs a Positive Pointwise Mutual Information (PPMI) word co-occurrence network over the $N=70,151$ unique valid letters; (iii) extracts emergent discourse communities via the Louvain modularity maximization algorithm; and (iv) cross-tabulates the emergent bottom-up semantic communities against the 1986 top-down bureaucratic taxonomy, six sociodemographic and mobilization dimensions (gender, urban/rural residence, spontaneous vs.\ coordinated petition campaigns, age cohorts, educational attainment, and income brackets), five geographic macro-regions plus state-level units, and the bipartite citizen-to-parliamentarian targeting network. Sensitivity analysis across document frequency thresholds and PPMI percentile cutoffs reveals an optimal connected network ($|V|=322$ nodes, $|E|=1,823$ edges, density $3.53\%$) that achieves high modularity ($Q=0.6363$) across eight cohesive thematic communities. Chi-square and Cram\'{e}r's $V$ analyses over $71,428$ mapped letters demonstrate highly significant structural divides ($p < 10^{-100}$): female citizens disproportionately prioritized Educational Policy ($21.3\%$ vs.\ $12.2\%$ for males) and Social Security/Healthcare ($14.7\%$), rural citizens championed Economic Development/Agriculture ($14.0\%$) and Labor/Professional Autonomy ($18.1\%$), life-course streamgraphs reveal a transition from youth educational demands ($23.4\%$) to senior welfare priorities ($17.0\%$), and institutional state-design themes (Public Administration and Political/Electoral Structure) rose monotonically with income and formal education, nearly doubling from the lowest to the highest socioeconomic strata. All curated data and replication scripts are openly released to foster Open Science.
-
-\vspace{4pt}
-\noindent\textbf{Keywords:} Complex Networks $\cdot$ Community Detection $\cdot$ Pointwise Mutual Information $\cdot$ Computational Social Science $\cdot$ Participatory Democracy $\cdot$ 1988 Brazilian Constitution.
-\end{abstract}
-
-\section{Introduction}
+\section{Introduction}\label{sec1}
 The drafting of the 1988 Brazilian Federal Constitution---widely known as the ``Citizen Constitution'' (\textit{Constitui\c{c}\~{a}o Cidad\~{a}})---marked the institutional culmination of Brazil's transition from a 21-year authoritarian military regime (1964--1985) to a pluralist democracy \citep{souza2008regras,mcdonald2022making}. Well before the advent of the commercial Internet and modern digital e-participation platforms \citep{stieglitz2013social,pogrebinschi2014impact}, the Brazilian Federal Senate's Data Processing Center (Prodasen) launched an unprecedented sociotechnical initiative between March 1986 and mid-1987: the Citizen Information Support System (\textit{Sistema de Apoio Inform\'{a}tico ao Cidad\~{a}o} -- SAIC), also known as ``Project Constitution'' (\textit{Projeto Constitui\c{c}\~{a}o}) \citep{mcdonald2022making,santos2024lazer}. Through millions of postage-paid forms distributed in post offices, schools, city councils, and labor unions nationwide, ordinary citizens were invited to write their demands for the new constitutional text and optionally address them to specific members of the National Constituent Assembly (\textit{Assembleia Nacional Constituinte} -- ANC) \citep{montambeault2018constituicao,mcdonald2022making}.
 
 In total, 72,719 citizen letters were transcribed into Prodasen's mainframe database, recording not only the free-text constitutional suggestion (\texttt{TEXTO SUGEST\~{A}O}) and an official classification into 24 thematic categories (\texttt{CAT\'{A}LOGO}), but also a rich vector of self-reported sociodemographic and political attributes: gender (\texttt{SEXO}), age group (\texttt{FAIXA ET\'{A}RIA}), urban vs.\ rural residence (\texttt{MORADOR}), educational attainment (\texttt{INSTRU\c{C}\~{A}O}), occupation (\texttt{PROFISS\~{A}O}), family income bracket in minimum wages (\texttt{FAIXA RENDA}), state and municipality of origin (\texttt{UF}, \texttt{LOCALIDADE}), and the targeted parliamentarian (\texttt{DESTINAT\'{A}RIO}).
@@ -53,7 +53,7 @@ In this study, we bridge this gap by introducing an integrated Complex Network A
 
 To ensure full reproducibility in accordance with Open Science principles, the curated dataset, high-resolution visualizations, and an interactive Google Colab replication notebook in English are publicly available at \url{https://github.com/alkawamo/snam-saic-1988} (and \url{https://github.com/alkawamo/base-saic}).
 
-\section{Related Work}
+\section{Related Work}\label{sec2}
 \subsection{Word Co-occurrence Networks and Community Detection in Political Texts}
 Representing natural language corpora as complex networks---where vertices correspond to lexical units (lemmas) and edges capture statistically significant co-occurrence within a textual window or document---provides a transparent, mathematically grounded alternative to opaque neural representations, particularly in historical, clinical, and legal domains where lexical interpretability is paramount \citep{mota2012speech,amancio2015complex,quispe2021using,amancio2025leveraging}. However, raw co-occurrence counts in large corpora are heavily skewed by high-frequency general vocabulary, producing dense ``hairball'' topologies with poor modular discriminability \citep{turney2010frequency,quispe2021using}.
 
@@ -62,11 +62,11 @@ To overcome this bias, \citet{church1990word} introduced Pointwise Mutual Inform
 \subsection{Participatory Democracy and the 1988 Brazilian Constituent Assembly}
 Historical and political science investigations of the 1988 Constituent Assembly have highlighted the dual nature of popular participation during Brazil's redemocratization \citep{souza2008regras,pogrebinschi2014impact,montambeault2018constituicao,mcdonald2022making}. While subsequent popular amendments (\textit{emendas populares}) required 30,000 signatures organized by civil society coalitions, the SAIC project (\textit{Projeto Constitui\c{c}\~{a}o}) represented an earlier, pre-constituent phase (1986--1987) open to any individual citizen \citep{mcdonald2022making,santos2024lazer}. \citet{mcdonald2022making} examined how ordinary citizens navigated these participatory channels during the democratic transition, while \citet{santos2024lazer} analyzed subsets of SAIC letters addressing leisure and social rights. Building upon these domain studies, the present work performs a rigorous programmatic audit of the complete 72,719-record dataset, establishes the quantitative correspondence between official top-down catalog themes and bottom-up network communities, and introduces a multi-dimensional stratification across demographic, socioeconomic, geographic, and parliamentary-targeting variables.
 
-\section{Dataset Audit and Methodological Pipeline}
+\section{Dataset Audit and Methodological Pipeline}\label{sec3}
 \subsection{Methodological Framework}
 Figure~\ref{fig:flowchart} outlines the end-to-end Computational Social Science framework employed in this study. The pipeline progresses through four distinct stages: (i) historical mainframe curation and data audit, correcting software-induced formula corruption; (ii) natural language preprocessing, vocabulary optimization, and Positive Pointwise Mutual Information (PPMI) network construction; (iii) unsupervised discourse community extraction via Louvain modularity maximization; and (iv) size-normalized projection onto individual letters followed by multi-dimensional demographic, life-course, geographic, and parliamentary stratification.
 
-\begin{figure*}[htbp]
+\begin{figure*}[t]
 \centering
 \includegraphics[width=\textwidth]{figures/fig0_pipeline_flowchart_en.png}
 \caption{End-to-end methodological workflow: from historical data curation ($72,719$ raw records) and PPMI co-occurrence network formulation ($70,151$ unique texts) to Louvain community detection ($Q=0.6363$) and multi-dimensional sociodemographic projection ($71,428$ mapped letters).}
@@ -77,14 +77,10 @@ Figure~\ref{fig:flowchart} outlines the end-to-end Computational Social Science 
 The raw SAIC archive comprises $72,719$ rows and $21$ attributes. A comprehensive programmatic audit (summarized in Table~\ref{tab:audit}) revealed high completeness across core analytical variables, including $100\%$ coverage in state of origin (\texttt{UF}), municipality (\texttt{LOCALIDADE}), and official thematic catalog (\texttt{CAT\'{A}LOGO}), alongside $89.3\%$ to $94.7\%$ completeness in sociodemographic attributes (\texttt{SEXO}, \texttt{FAIXA ET\'{A}RIA}, \texttt{MORADOR}, \texttt{INSTRU\c{C}\~{A}O}, and \texttt{FAIXA RENDA}).
 
 \begin{table}[htbp]
-\centering
-\caption{Audit of key attributes in the curated SAIC dataset ($72,719$ records).}
-\label{tab:audit}
-\footnotesize
-\setlength{\tabcolsep}{3.5pt}
-\begin{tabularx}{\columnwidth}{lrrX}
+\caption{Audit of key attributes in the curated SAIC dataset ($72,719$ records).}\label{tab:audit}
+\begin{tabular*}{\columnwidth}{@{\extracolsep{\fill}}lrrp{3.8cm}@{}}
 \toprule
-\textbf{Attribute} & \textbf{Missing} & \textbf{Valid (\%)} & \textbf{Description / Cardinality} \\
+Attribute & Missing & Valid (\%) & Description / Cardinality \\
 \midrule
 \texttt{UF} / \texttt{LOCALIDADE} & 0 & 100.0\% & 26 States/Territories; 2,535 cities \\
 \texttt{CAT\'{A}LOGO} & 0 & 100.0\% & 24 official Prodasen macro-themes \\
@@ -96,7 +92,7 @@ The raw SAIC archive comprises $72,719$ rows and $21$ attributes. A comprehensiv
 \texttt{FAIXA RENDA} & 7,774 & 89.3\% & 8 income brackets (No income to $>20$ MW) \\
 \texttt{DESTINAT\'{A}RIO} & 48,187 & 33.7\% & 519 targeted Assembly members \\
 \bottomrule
-\end{tabularx}
+\end{tabular*}
 \end{table}
 
 Crucially, our inspection of \texttt{TEXTO SUGEST\~{A}O} uncovered a subtle data-corruption artifact: in addition to $2$ genuinely blank cells, exactly $323$ records contained the string \texttt{\#NOME?} (\texttt{\#NAME?}). Cross-checking these rows against historical metadata revealed that Prodasen typists frequently began itemized citizen letters with a hyphen or equals sign (e.g., \texttt{- Sugere que...}), which legacy spreadsheet software misinterpreted as invalid formula syntax during CSV export. Replacing these $323$ corrupted strings with null values yields $72,394$ valid natural-language texts. Furthermore, we identified $2,243$ duplicate submissions resulting from coordinated petition campaigns (such as standardized postcards distributed by schools, trade unions, and professional associations), leaving $N = 70,151$ unique valid texts.
@@ -123,19 +119,15 @@ Because communities vary in lexical size $|C_k|$, raw word counts favor larger c
 \end{equation}
 Out of all $72,719$ historical records, $71,428$ letters ($98.2\%$) contain at least one network lemma and thus possess a well-defined normalized thematic profile $\mathbf{s}_d = (s_{d,1}, \dots, s_{d,K})$ and dominant community $c^*(d) = \arg\max_k s_{d,k}$. For each categorical variable $X$, we compute both the group-level mean thematic share $\bar{s}_{g,k} = \frac{1}{|D_g|} \sum_{d \in D_g} s_{d,k}$ and the Pearson Chi-square statistic $\chi^2$ and Cram\'{e}r's $V = \sqrt{\chi^2 / [n \min(R-1, K-1)]}$ on the contingency table of dominant communities.
 
-\section{Results and Discussion}
+\section{Results and Discussion}\label{sec4}
 \subsection{RQ1: Network Topology, Sensitivity Analysis, and Discourse Communities}
 Table~\ref{tab:sensitivity} reports the topological and modularity metrics across nine combinations of $\text{min\_df} \in \{1.0\%, 2.0\%, 3.0\%\}$ and PPMI percentile cutoffs $p \in \{85, 90, 95\}$. At lower pruning thresholds ($p=85$ or $90$), excessive inter-topic edges limit modularity ($Q \in [0.39, 0.54]$). At $p=95$, $\text{min\_df}=1.0\%$ yields high modularity ($Q=0.5877$) but fragments the graph into $2$ components, whereas $\text{min\_df}=3.0\%$ severely restricts the vocabulary ($|V|=171$) and fractures the network into $3$ disconnected components. The intermediate parameterization---\textbf{$\text{min\_df}=2.0\%$ ($\ge 1,403$ unique letters) with the 95th percentile PPMI cutoff ($\theta_{95}=1.25$)}---uniquely preserves a single connected component ($1$ component, $|V|=322$ nodes, $|E|=1,823$ edges, density $3.53\%$) while achieving the global maximum modularity of \textbf{$Q = 0.6363$} across $K=8$ communities.
 
 \begin{table}[htbp]
-\centering
-\caption{Sensitivity analysis of document frequency ($\text{min\_df}$) and PPMI percentile pruning ($p$).}
-\label{tab:sensitivity}
-\footnotesize
-\setlength{\tabcolsep}{3.2pt}
-\begin{tabular}{ccccccccc}
+\caption{Sensitivity analysis of document frequency ($\text{min\_df}$) and PPMI percentile pruning ($p$).}\label{tab:sensitivity}
+\begin{tabular*}{\columnwidth}{@{\extracolsep{\fill}}ccccccccc@{}}
 \toprule
-\textbf{min\_df} & \textbf{Perc.} & $\theta_p$ & $|E|$ & $|V|$ & \textbf{Dens.} & \textbf{Comp.} & $Q$ & $K$ \\
+min\_df & Perc. & $\theta_p$ & $|E|$ & $|V|$ & Dens. & Comp. & $Q$ & $K$ \\
 \midrule
 1.0\% & 85 & 0.72 & 34,296 & 723 & 13.14\% & 1 & 0.3936 & 6 \\
 1.0\% & 90 & 0.96 & 22,864 & 723 & 8.76\% & 1 & 0.4676 & 6 \\
@@ -149,27 +141,23 @@ Table~\ref{tab:sensitivity} reports the topological and modularity metrics acros
 3.0\% & 90 & 0.83 & 1,126 & 179 & 7.07\% & 1 & 0.5432 & 6 \\
 3.0\% & 95 & 1.19 & 563 & 171 & 3.87\% & 3 & 0.6348 & 9 \\
 \bottomrule
-\end{tabular}
+\end{tabular*}
 \end{table}
 
-Figure~\ref{fig:network} visualizes the optimal co-occurrence network ($|V|=322, |E|=1,823, Q=0.6363$), and Table~\ref{tab:communities} details the size, central nodes (degree, betweenness, and closeness within each induced community subgraph), and lexical profile of the eight emergent communities ($C_1$--$C_8$). Together, these communities span macroeconomic and agrarian policy ($C_1$), civil service and administrative structure ($C_2$), electoral rules and parliamentary mandates ($C_3$), public and religious education ($C_4$), criminal law, violence, and bioethics ($C_5$), retirement and healthcare ($C_6$), professional regulation and labor autonomy ($C_7$), and colloquial popular grievances against inflation, poverty, and the Jos\'{e} Sarney administration ($C_8$).
+Figure~\ref{fig:network} visualizes the optimal co-occurrence network ($|V|=322, |E|=1,823, Q=0.6363$) formatted with community separation halos and light inter-community edges, while Table~\ref{tab:communities} details the size, central nodes (degree, betweenness, and closeness within each induced community subgraph), and lexical profile of the eight emergent communities ($C_1$--$C_8$). Together, these communities span macroeconomic and agrarian policy ($C_1$), civil service and administrative structure ($C_2$), electoral rules and parliamentary mandates ($C_3$), public and religious education ($C_4$), criminal law, violence, and bioethics ($C_5$), retirement and healthcare ($C_6$), professional regulation and labor autonomy ($C_7$), and colloquial popular grievances against inflation, poverty, and the Jos\'{e} Sarney administration ($C_8$).
 
-\begin{figure*}[htbp]
+\begin{figure*}[t]
 \centering
 \includegraphics[width=\textwidth]{figures/fig1_cooccurrence_network_en.png}
-\caption{Word co-occurrence network of the 1988 Brazilian Constituent Assembly ($\text{min\_df}=2.0\%$, 95th percentile PPMI cutoff $\theta_{95}=1.25$, $|V|=322$ nodes, $|E|=1,823$ edges, modularity $Q=0.6363$). Node colors indicate the 8 Louvain communities ($C_1$--$C_8$) and node sizes are proportional to global betweenness centrality.}
+\caption{Word co-occurrence network of the 1988 Brazilian Constituent Assembly ($\text{min\_df}=2.0\%$, 95th percentile PPMI cutoff $\theta_{95}=1.25$, $|V|=322$ nodes, $|E|=1,823$ edges, modularity $Q=0.6363$). Node colors indicate the 8 Louvain communities ($C_1$--$C_8$) and node sizes are proportional to global betweenness centrality. Inter-community edges are rendered with light opacity ($\alpha=0.022$) to ensure structural layering and separation.}
 \label{fig:network}
 \end{figure*}
 
 \begin{table*}[htbp]
-\centering
-\caption{Characterization and intra-community centralities of the 8 Louvain discourse communities ($\text{min\_df}=2.0\%$, 95th percentile PPMI).}
-\label{tab:communities}
-\footnotesize
-\setlength{\tabcolsep}{4pt}
-\begin{tabularx}{\textwidth}{lclllX}
+\caption{Characterization and intra-community centralities of the 8 Louvain discourse communities ($\text{min\_df}=2.0\%$, 95th percentile PPMI).}\label{tab:communities}
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lclllp{6.8cm}@{}}
 \toprule
-\textbf{ID \& Community Label} & $|C_k|$ & \textbf{Max Degree} & \textbf{Max Betweenness} & \textbf{Max Closeness} & \textbf{Representative Lemmas (Portuguese)} \\
+ID \& Community Label & $|C_k|$ & Max Degree & Max Betweenness & Max Closeness & Representative Lemmas (Portuguese) \\
 \midrule
 \textbf{C1:} Economic Dev.\ \& Agriculture & 31 & \texttt{agricultura} (0.60) & \texttt{agricultura} (0.16) & \texttt{agricultura} (0.68) & \textit{agricultura, agr\'{\i}cola, terra, produzir, reforma, rural, banco, juro, d\'{\i}vida} \\
 \textbf{C2:} Public Admin.\ \& State Org. & 33 & \texttt{uni\~{a}o} (0.41) & \texttt{uni\~{a}o} (0.38) & \texttt{uni\~{a}o} (0.56) & \textit{uni\~{a}o, estado, munic\'{\i}pio, imposto, tributo, recurso, distribui\c{c}\~{a}o, cargo, concurso} \\
@@ -180,44 +168,44 @@ Figure~\ref{fig:network} visualizes the optimal co-occurrence network ($|V|=322,
 \textbf{C7:} Professional Autonomy \& Labor & 30 & \texttt{investiga\c{c}\~{a}o} (1.00) & \texttt{investiga\c{c}\~{a}o} (0.02) & \texttt{investiga\c{c}\~{a}o} (1.00) & \textit{detetive, investiga\c{c}\~{a}o, autonomia, aut\^{o}nomo, liberal, conselho, jornada, turno, hora} \\
 \textbf{C8:} Popular Appeals \& Protests & 67 & \texttt{deus} (0.33) & \texttt{deus} (0.21) & \texttt{deus} (0.54) & \textit{povo, gente, pobre, fome, sofrer, deus, sarney, pol\'{\i}tico, corrup\c{c}\~{a}o, carta, esperar} \\
 \bottomrule
-\end{tabularx}
+\end{tabular*}
 \end{table*}
 
 \subsection{RQ2: Top-Down Official Taxonomy vs.\ Bottom-Up Semantic Communities}
-Figure~\ref{fig:heatmap} presents the normalized cross-tabulation between Prodasen's 24 official catalog themes (\texttt{CAT\'{A}LOGO}) and the 8 network communities. Several critical insights emerge:
+Figure~\ref{fig:heatmap} presents the normalized cross-tabulation between Prodasen's 24 official catalog themes (\texttt{CAT\'{A}LOGO}) and the 8 network communities, rendered in the perceptually uniform and colorblind-safe \textit{viridis} palette. Several critical insights emerge:
 \begin{enumerate}
     \item \textbf{Strong Diagonal Validation in Specialized Domains:} Where Prodasen's taxonomy was sectorally specific, the unsupervised PPMI+Louvain network recovers the exact institutional domain: \textit{Educational Policy} maps predominantly to $C_4$ ($34.8\%$), \textit{Agricultural Policy} ($26.6\%$) and \textit{Industrial Policy} ($21.0\%$) map to $C_1$, \textit{Social Security Policy} maps to $C_6$ ($26.1\%$), \textit{Politics -- State Structure} maps to $C_3$ ($21.3\%$), and \textit{Public Manifestation/Protest} ($27.0\%$) and \textit{Constituent Information Request} ($33.6\%$) map to $C_8$.
     \item \textbf{Disambiguation of Bureaucratic Catch-All Categories:} The two largest official themes---\textit{Law -- State Organization} ($15,720$ records) and \textit{Social Organization} ($15,187$ records)---are decomposed by the network primarily into $C_5$ (Penal System, Public Security \& Family/Bioethics: $18.8\%$ and $17.8\%$), $C_2$ (Public Administration: $14.6\%$ and $13.0\%$), and $C_6$ (Social Security \& Healthcare: $12.8\%$ and $14.0\%$), exposing the punitive and moral debates (e.g., capital punishment, criminal age of majority, abortion) that were obscured under generic legal headings.
     \item \textbf{Discovery of Coordinated Corporatist Mobilization in Labor Policy:} Letters indexed under \textit{Labor Policy} ($11,833$ records) split sharply between $C_6$ ($18.7\%$: retirement and welfare benefits) and $C_7$ ($17.1\%$: professional regulation and autonomous workers), reflecting the massive postal campaign waged by private detectives and liberal professionals demanding constitutional recognition.
 \end{enumerate}
 
-\begin{figure*}[htbp]
+\begin{figure*}[t]
 \centering
 \includegraphics[width=\textwidth]{figures/fig2_topdown_vs_bottomup_heatmap_en.png}
-\caption{Normalized contingency heatmap (\%) comparing the 24 official Prodasen macro-themes (\textit{top-down} classification, rows) against the 8 Louvain network communities (\textit{bottom-up} semantic extraction, columns) across $71,428$ citizen letters.}
+\caption{Normalized contingency heatmap (\%) comparing the 24 official Prodasen macro-themes (\textit{top-down} classification, rows) against the 8 Louvain network communities (\textit{bottom-up} semantic extraction, columns) across $71,428$ citizen letters, rendered in the colorblind-safe \textit{viridis} colormap.}
 \label{fig:heatmap}
 \end{figure*}
 
 \subsection{RQ3: Sociodemographic Cleavages, Mobilization Modes, and Life-Course Streamgraphs}
-Figure~\ref{fig:demographics} compares the thematic distributions across gender, urban/rural residence, and spontaneous vs.\ coordinated petition campaigns, while Figure~\ref{fig:streamgraphs} presents continuous cubic-spline streamgraphs across age cohorts, educational attainment, and family income brackets. Every dimension exhibits extreme statistical significance ($p < 10^{-100}$):
+Figure~\ref{fig:demographics} pairs grouped thematic shares with diverging percentage-point difference plots across gender, urban/rural residence, and spontaneous vs.\ coordinated petition campaigns, while Figure~\ref{fig:streamgraphs} presents continuous cubic-spline streamgraphs across age cohorts, educational attainment, and family income brackets. Every dimension exhibits extreme statistical significance ($p < 10^{-100}$):
 
 \begin{itemize}
-    \item \textbf{Gender Divide ($\chi^2 = 3,159.7, \text{df}=7, p < 10^{-100}, V = 0.216$):} As shown in Figure~\ref{fig:demographics}(a), female participants ($n=23,047$) devoted nearly double the thematic share of male participants ($n=44,500$) to \textbf{$C_4$: Educational Policy} ($21.3\%$ vs.\ $12.2\%$, a $+9.1$ percentage-point gap) and also led in \textbf{$C_6$: Social Security \& Healthcare} ($14.7\%$ vs.\ $13.3\%$). Conversely, male citizens concentrated significantly more on macro-institutional and corporatist arenas: \textbf{$C_3$: Political \& Electoral Structure} ($12.7\%$ vs.\ $8.2\%$), \textbf{$C_2$: Public Administration} ($14.0\%$ vs.\ $11.9\%$), and \textbf{$C_7$: Professional Autonomy} ($12.9\%$ vs.\ $9.7\%$).
-    \item \textbf{Urban vs.\ Rural Cleavage ($\chi^2 = 1,454.4, \text{df}=7, p < 10^{-300}, V = 0.149$):} Figure~\ref{fig:demographics}(b) reveals that rural citizens ($n=7,394$) strongly prioritized \textbf{$C_1$: Economic Dev.\ \& Agriculture} ($14.0\%$ vs.\ $10.0\%$ urban, driven by agrarian reform and rural credit demands) and \textbf{$C_7$: Professional Autonomy \& Labor} ($18.1\%$ vs.\ $11.1\%$). In contrast, urban residents ($n=57,935$) placed markedly higher emphasis on \textbf{$C_5$: Penal System \& Public Security} ($13.3\%$ vs.\ $9.9\%$ rural), \textbf{$C_6$: Social Security \& Healthcare} ($14.0\%$ vs.\ $11.9\%$), and \textbf{$C_2$: Public Administration} ($13.6\%$ vs.\ $10.8\%$), reflecting rapid urbanization and metropolitan crime in 1980s Brazil.
-    \item \textbf{Spontaneous Letters vs.\ Coordinated Petition Campaigns ($\chi^2 = 3,808.1, \text{df}=7, p < 10^{-100}, V = 0.231$):} Comparing unique individual letters ($n=69,627$) against repeated boilerplate submissions ($n=1,801$) in Figure~\ref{fig:demographics}(c) exposes how organized interest groups utilized SAIC: coordinated campaigns were overwhelmingly concentrated in \textbf{$C_4$: Educational Policy} ($71.4\%$ vs.\ $14.1\%$ spontaneous) and \textbf{$C_7$: Professional Autonomy} ($13.8\%$ vs.\ $11.6\%$), whereas spontaneous citizen letters were balanced across all eight constitutional domains.
+    \item \textbf{Gender Divide ($\chi^2 = 3,159.7, \text{df}=7, p < 10^{-100}, V = 0.216$):} As shown in Figure~\ref{fig:demographics}(a,d), female participants ($n=23,047$) devoted nearly double the thematic share of male participants ($n=44,500$) to \textbf{$C_4$: Educational Policy} ($21.3\%$ vs.\ $12.2\%$, a $+9.1$ percentage-point net cleavage) and also led in \textbf{$C_6$: Social Security \& Healthcare} ($+1.4$ pp). Conversely, male citizens concentrated significantly more on macro-institutional and corporatist arenas: \textbf{$C_3$: Political \& Electoral Structure} ($-4.5$ pp), \textbf{$C_7$: Professional Autonomy} ($-3.2$ pp), and \textbf{$C_2$: Public Administration} ($-2.1$ pp).
+    \item \textbf{Urban vs.\ Rural Cleavage ($\chi^2 = 1,454.4, \text{df}=7, p < 10^{-300}, V = 0.149$):} Figure~\ref{fig:demographics}(b,e) reveals that rural citizens ($n=7,394$) strongly prioritized \textbf{$C_7$: Professional Autonomy \& Labor} ($+7.0$ pp) and \textbf{$C_1$: Economic Dev.\ \& Agriculture} ($+4.1$ pp, driven by agrarian reform and credit demands). In contrast, urban residents ($n=57,935$) placed markedly higher emphasis on \textbf{$C_5$: Penal System \& Public Security} ($-3.4$ pp), \textbf{$C_2$: Public Administration} ($-2.8$ pp), and \textbf{$C_6$: Social Security \& Healthcare} ($-2.2$ pp), reflecting rapid urbanization and metropolitan crime in 1980s Brazil.
+    \item \textbf{Spontaneous Letters vs.\ Coordinated Petition Campaigns ($\chi^2 = 3,808.1, \text{df}=7, p < 10^{-100}, V = 0.231$):} Comparing unique individual letters ($n=69,627$) against repeated boilerplate submissions ($n=1,801$) in Figure~\ref{fig:demographics}(c,f) exposes how organized interest groups utilized SAIC: coordinated campaigns were overwhelmingly concentrated in \textbf{$C_4$: Educational Policy} ($71.4\%$ vs.\ $14.1\%$ spontaneous, a massive $+57.3$ pp shift) and \textbf{$C_7$: Professional Autonomy} ($+2.2$ pp), whereas spontaneous citizen letters were balanced across all eight constitutional domains.
     \item \textbf{Life-Course Age Cohort Streamgraph ($\chi^2 = 4,920.6, \text{df}=49, p < 10^{-100}, V = 0.103$):} The streamgraph across eight age brackets in Figure~\ref{fig:streamgraphs}(a) captures a clear life-cycle shift in constitutional priorities. Adolescents and youth ($10$--$14$ and $15$--$19$ years, $n=16,107$) heavily championed \textbf{$C_4$: Education} ($23.4\%$ and $20.6\%$, respectively), which declined steadily to $10.1\%$ among seniors ($\ge 60$ years, $n=4,498$). Young adults ($25$--$29$ years) peaked in \textbf{$C_7$: Labor \& Professional Autonomy} ($15.6\%$), middle-aged adults ($30$--$49$ years) expanded \textbf{$C_3$: Political Structure} ($12.4\%$--$13.4\%$), and older cohorts ($50$--$59$ and $\ge 60$ years) surged in \textbf{$C_6$: Social Security \& Healthcare} ($16.5\%$ and $17.0\%$) and \textbf{$C_2$: Public Administration} ($14.6\%$).
     \item \textbf{Educational Attainment Streamgraph ($\chi^2 = 2,797.8, \text{df}=49, p < 10^{-100}, V = 0.077$):} Across the eight schooling tiers in Figure~\ref{fig:streamgraphs}(b), state-architecture communities expand monotonically with formal education: \textbf{$C_2$ (Public Admin.)} rises from $10.3\%$ among illiterate citizens ($n=635$) to $15.8\%$ among postgraduates ($n=1,703$), while \textbf{$C_3$ (Political Structure)} increases from $9.4\%$ to $13.9\%$. Conversely, \textbf{$C_8$ (Popular Appeals \& Protests)} drops nearly by half from $15.1\%$ (illiterate) to $8.4\%$ (postgraduate), and \textbf{$C_1$ (Agriculture/Economy)} declines from $14.5\%$ to $8.3\%$.
     \item \textbf{Income Bracket Streamgraph ($\chi^2 = 5,650.6, \text{df}=49, p < 10^{-100}, V = 0.112$):} Figure~\ref{fig:streamgraphs}(c) reveals a pronounced socioeconomic gradient. Moving from low-income workers ($\le 1$ minimum wage, $n=11,372$) to the highest income bracket ($>20$ MW, $n=1,859$), the combined share of institutional design themes ($C_2 + C_3$) nearly doubles from \textbf{$18.9\%$} ($10.7\% + 8.2\%$) to \textbf{$34.1\%$} ($17.6\% + 16.5\%$). Meanwhile, citizens with no formal income ($n=14,141$) prioritized \textbf{$C_4$: Education} ($19.3\%$) and \textbf{$C_8$: Popular Appeals} ($12.9\%$), whereas workers earning up to 1 MW exhibited a sharp expansion in \textbf{$C_7$: Professional Autonomy \& Labor} ($22.2\%$).
 \end{itemize}
 
-\begin{figure*}[htbp]
+\begin{figure*}[t]
 \centering
 \includegraphics[width=\textwidth]{figures/fig3_demographic_profiles_en.png}
-\caption{Thematic stratification across binary sociodemographic and mobilization dimensions: (a) Gender Divide ($N=67,547$), (b) Urban vs.\ Rural Residence ($N=65,329$), and (c) Spontaneous Individual Letters vs.\ Coordinated Petition Campaigns ($N=71,428$).}
+\caption{Thematic stratification and diverging cleavages: (a--c) Grouped mean thematic shares across Gender ($N=67,547$), Urban vs.\ Rural Residence ($N=65,329$), and Mobilization Mode ($N=71,428$); (d--f) Corresponding diverging percentage-point difference ($\Delta$ pp) dot plots highlighting the net directional cleavages.}
 \label{fig:demographics}
 \end{figure*}
 
-\begin{figure*}[htbp]
+\begin{figure*}[t]
 \centering
 \includegraphics[width=\textwidth]{figures/fig4_streamgraphs_socioeconomic_en.png}
 \caption{Continuous cubic-spline streamgraphs of constitutional discourse communities across ordinal life-course and socioeconomic strata: (a) Age Cohorts ($N=66,731$), (b) Educational Attainment Levels ($N=66,830$), and (c) Family Income Brackets in Minimum Wages ($N=63,843$).}
@@ -233,14 +221,14 @@ To examine spatial heterogeneity at both macro and sub-national scales, Figure~\
     \item \textbf{The Amazonian and Federal Administrative Belt ($C_2$):} Across the Amazon basin---\textbf{Amazonas (AM, $15.1\%$)}, \textbf{Par\'{a} (PA, $15.0\%$)}, \textbf{Rond\^{o}nia (RO, $16.1\%$)}, and \textbf{Roraima (RR, $15.4\%$)}---as well as the federal capital \textbf{Distrito Federal (DF, $14.7\%$)}, \textbf{Alagoas (AL, $14.9\%$)}, and \textbf{Sergipe (SE, $14.7\%$)}, citizens prioritized \textbf{$C_2$: Public Administration \& State Organization}, reflecting civil service and federal resource distribution demands.
 \end{itemize}
 
-\begin{figure*}[htbp]
+\begin{figure*}[t]
 \centering
 \includegraphics[width=\textwidth]{figures/fig5_choropleth_brazil_en.png}
 \caption{State-level choropleth maps of Brazil across all 26 historical Federative Units: (a) Participation volume ($\log_{10}$ scale of citizen letters per UF, $N=72,719$); (b) Dominant constitutional discourse community $c^*(u)$ and its thematic share (\%) per state. Hatched polygon (\texttt{TO*}) denotes the territory of Tocantins, which was part of Goi\'{a}s (\texttt{GO}) during the 1986--1987 SAIC consultation prior to its creation by the 1988 Constitution.}
 \label{fig:choropleth}
 \end{figure*}
 
-\begin{figure*}[htbp]
+\begin{figure*}[t]
 \centering
 \includegraphics[width=\textwidth]{figures/fig4_regional_distribution_en.png}
 \caption{Geographic distribution of constitutional discourse communities across (a) the five Brazilian macro-regions ($N=71,310, \chi^2 = 5,009.6$) and (b) the top 12 Federative Units/States ($N=61,218, \chi^2 = 8,611.5$).}
@@ -254,28 +242,27 @@ Finally, we examined the directed targeting of constitutional demands toward the
     \item \textbf{Social Welfare, Healthcare, and Public Security Mediators ($C_6$, $C_5$, and $C_2$):} Prominent senators and party leaders---including \textbf{Paulo Maluf} ($n=433$, $17.0\%$), \textbf{Jamil Haddad} ($n=501$, $16.6\%$), \textbf{\'{A}lvaro Dias} ($n=739$, $16.2\%$), \textbf{Carlos Chiarelli} ($n=341$, $16.0\%$), \textbf{Itamar Franco} ($n=498$, $16.0\%$), \textbf{Fernando Henrique Cardoso} ($n=861$, $15.7\%$), \textbf{Alfredo Campos} ($n=392$, $15.6\%$), and \textbf{Pimenta da Veiga} ($n=662$, $14.5\%$)---were predominantly petitioned regarding \textbf{$C_6$: Social Security \& Healthcare}. In contrast, Majority Leader \textbf{M\'{a}rio Covas} ($n=332$) peaked in \textbf{$C_5$: Penal System \& Public Security} ($16.1\%$), and Senate Leader \textbf{Jos\'{e} Fragelli} ($n=291$) peaked in \textbf{$C_2$: Public Administration} ($14.9\%$).
 \end{enumerate}
 
-\begin{figure*}[htbp]
+\begin{figure*}[t]
 \centering
 \includegraphics[width=\textwidth]{figures/fig5_bipartite_parliamentarians_en.png}
 \caption{Cluster-ordered thematic specialization matrix (\%) of the top 15 targeted Constituent Assembly members in the Citizen--Parliamentarian bipartite network (\texttt{DESTINAT\'{A}RIO}, $N=24,532$). Parliamentarians are sorted by their primary discourse community cluster, with horizontal dividers separating distinct institutional and policy domains.}
 \label{fig:bipartite}
 \end{figure*}
 
-\section{Conclusion}
+\section{Conclusion}\label{sec5}
 This work presented the first comprehensive complex network and multi-dimensional sociodemographic investigation of the complete 72,719-letter SAIC database from the 1988 Brazilian National Constituent Assembly. By auditing historical data-entry noise (\texttt{\#NOME?}), modeling lexical associations via Positive Pointwise Mutual Information ($\text{min\_df}=2.0\%$, 95th percentile cutoff), and applying Louvain community detection, we extracted a highly modular semantic network ($Q=0.6363$) comprising eight interpretable constitutional discourse communities.
 
 Cross-tabulating these emergent bottom-up communities against Prodasen's 1986 official catalog demonstrated that while unsupervised network clustering aligns closely with specialized administrative labels, it successfully unpacks massive bureaucratic catch-all categories (\textit{Social Organization} and \textit{Law -- State Organization}) into distinct substantive debates. Moreover, statistical stratification and continuous streamgraphs across gender, urban/rural residence, spontaneous vs.\ coordinated campaigns, age cohorts, schooling, income, macro-regions, states, and targeted parliamentarians revealed profound structural cleavages in how different segments of Brazilian society envisioned the democratic social contract: women, youth, and Southern/Center-Western citizens (especially in Paran\'{a} and Goi\'{a}s) acted as the primary vanguards for public education ($C_4$); rural and lower-income workers mobilized around land, agricultural credit, and labor autonomy ($C_1, C_7$); urban, older, and Southeastern citizens demanded social security, healthcare, and public safety ($C_6, C_5$); and higher-income, highly educated strata dominated discussions on fiscal federalism, civil service rules, and electoral engineering ($C_2, C_3$).
 
 Future research will extend this open-science repository by incorporating contextualized embeddings \citep{amancio2025leveraging} to track how specific grassroots clusters directly influenced the final articles promulgated in the 1988 Federal Constitution.
 
-\section{Declarations}
+\section*{Declarations}
 \noindent\textbf{Funding:} The authors received no specific funding for this work.\\[3pt]
 \noindent\textbf{Competing Interests:} The authors declare that they have no competing interests.\\[3pt]
 \noindent\textbf{Compliance with Ethical Standards:} This study analyzes a publicly accessible historical mainframe dataset released by the Federal Senate of Brazil. No human subjects were actively recruited or subjected to experimental interventions.\\[3pt]
 \noindent\textbf{Data and Code Availability:} In compliance with Open Science standards, the curated dataset, high-resolution figures, and an interactive Google Colab replication notebook are publicly available at \url{https://github.com/alkawamo/snam-saic-1988} and \url{https://github.com/alkawamo/base-saic}.\\[3pt]
 \noindent\textbf{Authors' Contributions:} R.R.M. curated the dataset, implemented the network modeling pipeline, and wrote the initial draft. A.L.S.K. conceptualized the study, designed the multi-dimensional stratification framework, supervised the project, performed the statistical analyses, and reviewed the manuscript. Both authors read and approved the final manuscript.
 
-\bibliographystyle{unsrtnat}
 \bibliography{references}
 
 \end{document}
