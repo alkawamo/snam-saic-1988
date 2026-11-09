@@ -22,9 +22,9 @@ In this study, we contrast that historical **top-down** bureaucratic taxonomy wi
 
 ```text
 snam-saic-1988/
+├── SAIC.csv                               # Curated SAIC dataset (72,719 rows x 21 columns)
 ├── SAIC_1988_OpenScience_Analysis.ipynb   # Reproducible Google Colab Notebook (English)
 ├── README.md                              # Project documentation and replication guide
-├── snam_manuscript.tex                    # LaTeX source manuscript (Springer SNAM format)
 └── figures/                               # High-resolution (300 DPI) figures in English
     ├── fig1_cooccurrence_network_en.png
     ├── fig2_topdown_vs_bottomup_heatmap_en.png
@@ -32,8 +32,6 @@ snam-saic-1988/
     ├── fig4_regional_distribution_en.png
     └── fig5_bipartite_parliamentarians_en.png
 ```
-
-*Note:* The curated dataset (`SAIC.csv`, 72,719 rows $\times$ 21 columns) is automatically fetched by the Colab notebook from the companion data repository [`alkawamo/base-saic`](https://github.com/alkawamo/base-saic) (or can be placed directly in the working directory).
 
 ---
 
