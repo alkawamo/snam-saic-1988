@@ -71,7 +71,7 @@ Figure~\ref{fig:flowchart} outlines the end-to-end Computational Social Science 
 
 \begin{figure*}[t]
 \centering
-\includegraphics[width=\textwidth]{figures/fig0_pipeline_flowchart_en.png}
+\includegraphics[width=\textwidth]{figures/fig1_methodological_flowchart.png}
 \caption{End-to-end methodological workflow: from historical data curation ($72,719$ raw records) and PPMI co-occurrence network formulation ($70,151$ unique texts) to Louvain community detection ($Q=0.6363$) and multi-dimensional sociodemographic projection ($71,428$ mapped letters).}
 \label{fig:flowchart}
 \end{figure*}
@@ -161,7 +161,7 @@ We note that $C_8$ is the most heterogeneous community in the network ($|C_8|=67
 
 \begin{figure*}[t]
 \centering
-\includegraphics[width=\textwidth]{figures/fig1_cooccurrence_network_en.png}
+\includegraphics[width=\textwidth]{figures/fig2_cooccurrence_network.png}
 \caption{Word co-occurrence network of the 1988 Brazilian Constituent Assembly ($\text{min\_df}=2.0\%$, 95th percentile PPMI cutoff $\theta_{95}=1.25$, $|V|=322$ nodes, $|E|=1,823$ edges, modularity $Q=0.6363$). Node colors indicate the 8 Louvain communities ($C_1$--$C_8$) and node sizes are proportional to global betweenness centrality. Inter-community edges are rendered with light opacity ($\alpha=0.022$) to ensure structural layering and separation.}
 \label{fig:network}
 \end{figure*}
@@ -200,7 +200,7 @@ Figure~\ref{fig:heatmap} presents the normalized cross-tabulation between Prodas
 
 \begin{figure*}[t]
 \centering
-\includegraphics[width=\textwidth]{figures/fig2_topdown_vs_bottomup_heatmap_en.png}
+\includegraphics[width=\textwidth]{figures/fig3_topdown_vs_bottomup_heatmap.png}
 \caption{Normalized contingency heatmap (\%) comparing the 24 official Prodasen macro-themes (\textit{top-down} classification, rows) against the 8 Louvain network communities (\textit{bottom-up} semantic extraction, columns) across $71,428$ citizen letters, rendered in the colorblind-safe \textit{viridis} colormap.}
 \label{fig:heatmap}
 \end{figure*}
@@ -219,14 +219,14 @@ Figure~\ref{fig:demographics} pairs grouped thematic shares with diverging perce
 
 \begin{figure*}[t]
 \centering
-\includegraphics[width=\textwidth]{figures/fig3_demographic_profiles_en.png}
+\includegraphics[width=\textwidth]{figures/fig4_demographic_profiles.png}
 \caption{Thematic stratification and diverging cleavages: (a--c) Grouped mean thematic shares across Gender ($N=67,547$), Urban vs.\ Rural Residence ($N=65,329$), and Mobilization Mode ($N=71,428$); (d--f) Corresponding diverging percentage-point difference ($\Delta$ pp) dot plots highlighting the net directional cleavages.}
 \label{fig:demographics}
 \end{figure*}
 
 \begin{figure*}[t]
 \centering
-\includegraphics[width=\textwidth]{figures/fig4_streamgraphs_socioeconomic_en.png}
+\includegraphics[width=\textwidth]{figures/fig5_streamgraphs_socioeconomic.png}
 \caption{Continuous cubic-spline streamgraphs of constitutional discourse communities across ordinal life-course and socioeconomic strata: (a) Age Cohorts ($N=66,731$), (b) Educational Attainment Levels ($N=66,830$), and (c) Family Income Brackets in Minimum Wages ($N=63,843$).}
 \label{fig:streamgraphs}
 \end{figure*}
@@ -242,14 +242,14 @@ To examine spatial heterogeneity at both macro and sub-national scales, Figure~\
 
 \begin{figure*}[t]
 \centering
-\includegraphics[width=\textwidth]{figures/fig5_choropleth_brazil_en.png}
+\includegraphics[width=\textwidth]{figures/fig6_choropleth_brazil.png}
 \caption{State-level choropleth maps of Brazil across all 26 historical Federative Units: (a) Participation volume ($\log_{10}$ scale of citizen letters per UF, $N=72,719$); (b) Dominant constitutional discourse community $c^*(u)$ and its thematic share (\%) per state. Hatched polygon (\texttt{TO*}) denotes the territory of Tocantins, which was part of Goi\'{a}s (\texttt{GO}) during the 1986--1987 SAIC consultation prior to its creation by the 1988 Constitution.}
 \label{fig:choropleth}
 \end{figure*}
 
 \begin{figure*}[t]
 \centering
-\includegraphics[width=\textwidth]{figures/fig4_regional_distribution_en.png}
+\includegraphics[width=\textwidth]{figures/fig7_regional_distribution.png}
 \caption{Geographic distribution of constitutional discourse communities across (a) the five Brazilian macro-regions ($N=71,310, \chi^2 = 5,009.6$) and (b) the top 12 Federative Units/States ($N=61,218, \chi^2 = 8,611.5$).}
 \label{fig:regional}
 \end{figure*}
@@ -263,7 +263,7 @@ Finally, we examined the directed targeting of constitutional demands toward the
 
 \begin{figure*}[t]
 \centering
-\includegraphics[width=\textwidth]{figures/fig5_bipartite_parliamentarians_en.png}
+\includegraphics[width=\textwidth]{figures/fig8_bipartite_parliamentarians.png}
 \caption{Cluster-ordered thematic specialization matrix (\%) of the top 15 targeted Constituent Assembly members in the Citizen--Parliamentarian bipartite network (\texttt{DESTINAT\'{A}RIO}, $N=24,532$). Parliamentarians are sorted by their primary discourse community cluster, with horizontal dividers separating distinct institutional and policy domains.}
 \label{fig:bipartite}
 \end{figure*}
