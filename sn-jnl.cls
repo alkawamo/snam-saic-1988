@@ -446,7 +446,9 @@
 
 \newbox\artcatbox%
 
-\AtBeginDocument{\definecolor{artcatboxgray}{cmyk}{0.0,0.0,0.0,0.30}}%
+\RequirePackage{xcolor}
+\providecolor{artcatboxgray}{cmyk}{0.0,0.0,0.0,0.30}%
+\AtBeginDocument{\providecolor{artcatboxgray}{cmyk}{0.0,0.0,0.0,0.30}}%
 
 \def\articletype#1{\if!#1!\else\setbox\artcatbox\hbox{\Artcatfont\hskip1mm#1\hskip1mm}\fi%
 \gdef\ArtType{\fboxsep=0pt\colorbox{artcatboxgray}{\vbox to 4mm{\vfil%
@@ -1655,10 +1657,10 @@
 
 \if@Spr@basic@refstyle%
 \if@Numbered@refstyle%
-  \usepackage[numbers,sort&compress]{natbib}%
+  \@ifpackageloaded{natbib}{}{\usepackage[numbers,sort&compress]{natbib}}%
   \gdef\NumBib{YES}%
 \else%
- \usepackage[authoryear]{natbib}%
+ \@ifpackageloaded{natbib}{}{\usepackage[authoryear]{natbib}}%
   \gdef\NumBib{NO}%
 \fi%
   \bibliographystyle{sn-basic}%
@@ -1667,10 +1669,10 @@
 \fi%
 \if@Mathphys@refstyle%
 \if@Numbered@refstyle%
-  \usepackage[numbers,sort&compress]{natbib}%
+  \@ifpackageloaded{natbib}{}{\usepackage[numbers,sort&compress]{natbib}}%
   \gdef\NumBib{YES}%
 \else%
- \usepackage[authoryear]{natbib}%
+ \@ifpackageloaded{natbib}{}{\usepackage[authoryear]{natbib}}%
   \gdef\NumBib{NO}%
 \fi%
   \bibliographystyle{sn-mathphys}%
@@ -1678,7 +1680,7 @@
   \def\bibfont{\reset@font\fontfamily{\rmdefault}\normalsize\selectfont}%
 \fi%
 \if@APS@refstyle%
-  \usepackage[numbers,sort&compress]{natbib}%
+  \@ifpackageloaded{natbib}{}{\usepackage[numbers,sort&compress]{natbib}}%
   \gdef\NumBib{YES}%
   \bibliographystyle{sn-APS}%
   \setlength{\bibsep}{1em}%
@@ -1686,10 +1688,10 @@
 \fi%
 \if@Vancouver@refstyle%
 \if@Numbered@refstyle%
-  \usepackage[numbers,sort&compress]{natbib}%
+  \@ifpackageloaded{natbib}{}{\usepackage[numbers,sort&compress]{natbib}}%
   \gdef\NumBib{YES}%
 \else%
- \usepackage[authoryear]{natbib}%
+ \@ifpackageloaded{natbib}{}{\usepackage[authoryear]{natbib}}%
   \gdef\NumBib{NO}%
 \fi%
   \bibliographystyle{sn-vancouver}%
@@ -1715,10 +1717,10 @@
 \fi%
 \if@Chicago@refstyle%
 \if@Numbered@refstyle%
-  \usepackage[numbers,sort&compress]{natbib}%
+  \@ifpackageloaded{natbib}{}{\usepackage[numbers,sort&compress]{natbib}}%
   \gdef\NumBib{YES}%
 \else%
- \usepackage[authoryear]{natbib}%
+ \@ifpackageloaded{natbib}{}{\usepackage[authoryear]{natbib}}%
   \gdef\NumBib{NO}%
 \fi%
   \bibliographystyle{sn-chicago}%
@@ -1727,14 +1729,14 @@
   \def\bibfont{\reset@font\fontfamily{\rmdefault}\normalsize\selectfont}%
 \fi%
 \if@Standard@Nature@refstyle%
-  \usepackage[numbers,sort&compress]{natbib}%
+  \@ifpackageloaded{natbib}{}{\usepackage[numbers,sort&compress]{natbib}}%
   \gdef\NumBib{YES}%
   \bibliographystyle{sn-nature}%
   \setlength{\bibsep}{1em}%
   \def\bibfont{\reset@font\fontfamily{\rmdefault}\normalsize\selectfont}%
 \fi%
 \if@Default@refstyle%
-  \usepackage[numbers,sort&compress]{natbib}%
+  \@ifpackageloaded{natbib}{}{\usepackage[numbers,sort&compress]{natbib}}%
   \gdef\NumBib{YES}%
   \setlength{\bibsep}{1em}%
   \def\bibfont{\reset@font\fontfamily{\rmdefault}\normalsize\selectfont}%
